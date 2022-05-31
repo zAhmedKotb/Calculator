@@ -1,0 +1,524 @@
+//javaCode
+//note code the StyleButton in this link >>> https://github.com/zAhmedKotb/Style-for-button-in-android 
+
+package com.abokotb.calc1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    Button  bra,one, two, three, four, five,six, seven, eghit,nine, zero, equal,multiply, substraction, divide, add, clear,clearAll,persentage ,dot;
+    TextView input , output;
+    boolean check = false;
+    boolean addd,sub,mul,div,bars;
+    Float resalt1 , resalt2 ;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        input = findViewById(R.id.input);
+        output = findViewById(R.id.output);
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        three = findViewById(R.id.three);
+        four = findViewById(R.id.four);
+        five = findViewById(R.id.five);
+        six = findViewById(R.id.six);
+        seven = findViewById(R.id.seven);
+        eghit = findViewById(R.id.eghit);
+        nine = findViewById(R.id.nine);
+        zero = findViewById(R.id.zero);
+        equal = findViewById(R.id.equal);
+        multiply = findViewById(R.id.mult);
+        substraction = findViewById(R.id.sub);
+        divide = findViewById(R.id.div);
+        add = findViewById(R.id.sum);
+        bra= findViewById(R.id.bra);
+        persentage = findViewById(R.id.modils);
+        dot = findViewById(R.id.dot);
+        clear= findViewById(R.id.clear);
+        clearAll = findViewById(R.id.clearAll);
+
+        clearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText("");
+                output.setText("");
+            }
+        });
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText("");
+                output.setText("");
+            }
+        });
+        zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "0");
+            }
+        });
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "1");
+            }
+        });
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "2");
+            }
+        });
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "3");
+            }
+        });
+        four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "4");
+            }
+        });
+        five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "5");
+            }
+        });
+        six.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "6");
+            }
+        });
+        seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "7");
+            }
+        });
+        eghit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "8");
+            }
+        });
+        nine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "9");
+            }
+        });
+        bra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (check) {
+
+                    input.setText(input.getText() + "(");
+                    check = false;
+                } else {
+
+                    input.setText(input.getText() + ")");
+                    check = true;
+                }
+
+            }
+        });
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent();
+                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivity(intent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else{
+                    resalt1=Float.parseFloat(input.getText()+"");
+                    sub=true;
+                    input.setText(null);
+                }
+
+            }
+        });
+        substraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        persentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resalt2=Float.parseFloat(input.getText()+ "");
+
+                if(addd == true){
+                    output.setText(resalt1+resalt2+"");
+                    addd=false;
+                    input.setText(null);
+
+                }
+                if(sub == true){
+                    output.setText(resalt1-resalt2+"");
+                    sub=false;
+                    input.setText(null);
+
+                }
+                if(mul==true){
+                    output.setText(resalt1 * resalt2 +"");
+                    mul=false;
+                    input.setText(null);
+
+                }
+                if(div == true){
+                    output.setText(resalt1/resalt2+"");
+                    sub=false;
+                    input.setText(null);
+
+
+                }
+                if(bars==true){
+                    Float per=(resalt1/resalt2)*100;
+                    output.setText(+per+"%");
+                    bars=true;
+                    input.setText(null);
+
+                }
+
+            }
+        });
+
+    }
+}
+
+
+
+// xmlCode
+
+package com.abokotb.calc1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    Button  bra,one, two, three, four, five,six, seven, eghit,nine, zero, equal,multiply, substraction, divide, add, clear,clearAll,persentage ,dot;
+    TextView input , output;
+    boolean check = false;
+    boolean addd,sub,mul,div,bars;
+    Float resalt1 , resalt2 ;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        input = findViewById(R.id.input);
+        output = findViewById(R.id.output);
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        three = findViewById(R.id.three);
+        four = findViewById(R.id.four);
+        five = findViewById(R.id.five);
+        six = findViewById(R.id.six);
+        seven = findViewById(R.id.seven);
+        eghit = findViewById(R.id.eghit);
+        nine = findViewById(R.id.nine);
+        zero = findViewById(R.id.zero);
+        equal = findViewById(R.id.equal);
+        multiply = findViewById(R.id.mult);
+        substraction = findViewById(R.id.sub);
+        divide = findViewById(R.id.div);
+        add = findViewById(R.id.sum);
+        bra= findViewById(R.id.bra);
+        persentage = findViewById(R.id.modils);
+        dot = findViewById(R.id.dot);
+        clear= findViewById(R.id.clear);
+        clearAll = findViewById(R.id.clearAll);
+
+        clearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText("");
+                output.setText("");
+            }
+        });
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText("");
+                output.setText("");
+            }
+        });
+        zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "0");
+            }
+        });
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "1");
+            }
+        });
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "2");
+            }
+        });
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "3");
+            }
+        });
+        four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "4");
+            }
+        });
+        five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "5");
+            }
+        });
+        six.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "6");
+            }
+        });
+        seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "7");
+            }
+        });
+        eghit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "8");
+            }
+        });
+        nine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                input.setText(input.getText() + "9");
+            }
+        });
+        bra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (check) {
+
+                    input.setText(input.getText() + "(");
+                    check = false;
+                } else {
+
+                    input.setText(input.getText() + ")");
+                    check = true;
+                }
+
+            }
+        });
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent();
+                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivity(intent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else{
+                    resalt1=Float.parseFloat(input.getText()+"");
+                    sub=true;
+                    input.setText(null);
+                }
+
+            }
+        });
+        substraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        persentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(input == null){
+                    input.setText("");
+                }else {
+                    resalt1=Float.parseFloat(input.getText()+ "");
+                    sub=true;
+                    input.setText(null);
+
+                }
+            }
+        });
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resalt2=Float.parseFloat(input.getText()+ "");
+
+                if(addd == true){
+                    output.setText(resalt1+resalt2+"");
+                    addd=false;
+                    input.setText(null);
+
+                }
+                if(sub == true){
+                    output.setText(resalt1-resalt2+"");
+                    sub=false;
+                    input.setText(null);
+
+                }
+                if(mul==true){
+                    output.setText(resalt1 * resalt2 +"");
+                    mul=false;
+                    input.setText(null);
+
+                }
+                if(div == true){
+                    output.setText(resalt1/resalt2+"");
+                    sub=false;
+                    input.setText(null);
+
+
+                }
+                if(bars==true){
+                    Float per=(resalt1/resalt2)*100;
+                    output.setText(+per+"%");
+                    bars=true;
+                    input.setText(null);
+
+                }
+
+            }
+        });
+
+    }
+}
